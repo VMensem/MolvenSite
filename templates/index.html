@@ -22,7 +22,7 @@
       <nav>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <ul id="navlist">
-          <li><a href="#home">Главная</a></li>
+          <li><a href="/">Главная</a></li>
           <li><a href="#news">Новости</a></li>
           <li><a href="#download">Скачать</a></li>
           <li><a href="#donate">Донат</a></li>
@@ -38,7 +38,7 @@
 
   <main class="container">
     <!-- Главная секция -->
-    <section id="home" class="hero">
+    <section id="news" class="hero">
       <h1>Molven RP — CRMP проект</h1>
       <p class="lead">Ролевая атмосфера, кастомные скрипты, дружное сообщество.</p>
       <a class="btn" href="#download">Скачать лаунчер</a>
@@ -46,7 +46,7 @@
     </section>
 
     <!-- Новости -->
-    <section id="news" class="card-section">
+    <section id="download" class="card-section">
       <h2>Последние новости</h2>
       <div class="news-list">
         <article class="card news-item">
@@ -67,14 +67,14 @@
     </section>
 
     <!-- Скачать -->
-    <section id="download" class="card-section">
+    <section id="donate" class="card-section">
       <h2>Скачать клиент</h2>
       <p class="muted">Поддерживается только Windows. Архив содержит лаунчер и инструкции по установке.</p>
       <a class="btn" href="#download">Скачать (Windows)</a>
     </section>
 
     <!-- Донат -->
-    <section id="donate" class="card-section">
+    <section id="contacts" class="card-section">
       <h2>Донат и магазин</h2>
       <form onsubmit="event.preventDefault();simulatePay()">
         <label>Сумма (₽)</label>
@@ -93,7 +93,7 @@
     </section>
 
     <!-- Контакты -->
-    <section id="contacts" class="card-section">
+    <section id="end" class="card-section">
       <h2>Контакты</h2>
       <form onsubmit="event.preventDefault();alert('Сообщение отправлено')">
         <input placeholder="Имя">
