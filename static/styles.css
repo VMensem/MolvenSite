@@ -1,0 +1,16 @@
+:root{
+  --bg:#0f1113;
+  --card:#141617;
+  --muted:#9aa3a8;
+  --accent:#d63939;
+  --accent-2:#b63a3a;
+  --radius:14px;
+  --container:1100px;
+  color-scheme: dark;
+}
+body{margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,Arial;background:var(--bg);color:#e6eef2;}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;background:#141617;}
+.logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#8a2b2b);}
+.btn{padding:8px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;font-weight:600}
+.ghost{padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04)}
