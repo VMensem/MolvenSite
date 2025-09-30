@@ -63,3 +63,65 @@ footer{padding:20px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0
   nav ul{display:none}
   .menu-toggle{display:block}
 }
+/* Фоновое изображение для страницы входа */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("/static/img/background.jpg"); /* путь к твоей картинке */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Форма входа */
+.login-box {
+    background: rgba(0, 0, 0, 0.75); /* затемнённый фон */
+    padding: 40px;
+    border-radius: 12px;
+    width: 320px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+}
+
+.login-box label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: none;
+}
+
+.login-box .btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-box .btn:hover {
+    background-color: #c0392b;
+}
+
+.login-box .hint {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #bbb;
+}
