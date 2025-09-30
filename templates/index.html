@@ -12,22 +12,22 @@
     <div class="container nav">
       <div class="brand">
         <div class="logo">
-          <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Molven RP">
+          <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Molven RP" style="text-align: left">
         </div>
         <div>
-          <div class="project-title">Molven RP</div>
-          <div class="project-subtitle">CRMP Project</div>
+          <div class="project-title" style="text-align: left">Molven RP</div>
+          <div class="project-subtitle" style="text-align: left">CRMP Project</div>
         </div>
       </div>
       <nav>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <ul id="navlist">
           <li><a href="/" class="btn">Главная</a></li>
+          <li><a href="{{ url_for('molvenproject.ru') }}" class="btn">Форум</a></li>
           <li><a href="#news" class="btn">Новости</a></li>
           <li><a href="#download" class="btn">Скачать</a></li>
           <li><a href="#donate" class="btn">Донат</a></li>
-          <li><a href="#contacts" class="btn">Контакты</a></li>
-          <li><a class="btn" href="#login">Войти</a></li>
+          <li><a class="btn" href="#login">Личный кабинет</a></li>
         </ul>
       </nav>
     </div>
@@ -75,12 +75,10 @@
       <h2>Донат и магазин</h2>
       <form onsubmit="event.preventDefault();simulatePay()">
         <label>Сумма (₽)</label>
-        <input type="number" value="500" min="10">
+        <input type="number" value="1" min="1">
         <label>Пакет</label>
         <select>
-          <option value="gc100">+100GC</option>
-          <option value="gc300">+300GC</option>
-          <option value="gc750">+750GC</option>
+          <option value="1">+1 Coins</option>
         </select>
         <div class="donate-buttons">
           <button class="btn" type="submit">Оплатить картой</button>
@@ -88,18 +86,6 @@
         </div>
       </form>
     </section>
-
-    <!-- Контакты -->
-    <section id="end" class="card-section">
-      <h2>Контакты</h2>
-      <form onsubmit="event.preventDefault();alert('Сообщение отправлено')">
-        <input placeholder="Имя">
-        <input placeholder="Email">
-        <textarea placeholder="Сообщение" rows="4"></textarea>
-        <button class="btn">Отправить</button>
-      </form>
-    </section>
-  </main>
 
   <footer>
     <div class="container">
