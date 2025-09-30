@@ -8,9 +8,15 @@
   --container:1100px;
 }
 *{box-sizing:border-box}
-body{
-  margin:0;font-family:Inter,Segoe UI,Roboto,sans-serif;background:var(--bg);color:#e6eef2;line-height:1.5;
+body {
+    background-image: url("{{ url_for('static', filename='img/background.jpg') }}");
+    background-size: cover; /* масштабирует изображение по всей области */
+    background-position: center; /* центрирует изображение */
+    background-repeat: no-repeat; /* не повторять */
+    background-attachment: fixed; /* фон фиксирован при скролле */
+    color: #fff; /* чтобы текст был виден на фоне */
 }
+
 a{color:inherit;text-decoration:none}
 .container{max-width:var(--container);margin:0 auto;padding:0 20px}
 header{
