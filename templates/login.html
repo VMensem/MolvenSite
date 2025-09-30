@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход — Molven RP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <div class="brand">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Molven RP">
+                </div>
+                <div class="project-info">
+                    <div class="project-title">Molven RP</div>
+                    <div class="project-subtitle">CRMP Project</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="login-section">
+            <div class="login-box">
+                <h2>Личный кабинет</h2>
+                <form method="POST" action="/login">
+                    <label for="nick">Никнейм</label>
+                    <input type="text" id="nick" name="nick" placeholder="Введите ник">
+
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" placeholder="Введите пароль">
+
+                    <button type="submit" class="btn">Войти</button>
+                </form>
+                <p class="hint">Просто для теста, без подключения к серверу</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Molven RP. Все права защищены.</p>
+    </footer>
+</body>
+</html>
