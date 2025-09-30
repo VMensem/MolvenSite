@@ -22,13 +22,12 @@
       <nav>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <ul id="navlist">
-          <li><a href="/">Главная</a></li>
+          <li><a href="#home">Главная</a></li>
           <li><a href="#news">Новости</a></li>
           <li><a href="#download">Скачать</a></li>
           <li><a href="#donate">Донат</a></li>
           <li><a href="#contacts">Контакты</a></li>
         </ul>
-          <a class="btn" href="#download">Скачать лаунчер</a>
       </nav>
       <div class="header-buttons">
         <a class="ghost" href="#login">Войти</a>
@@ -39,8 +38,8 @@
 
   <main class="container">
     <!-- Главная секция -->
-    <section class="hero">
-      <h1>Molven RP — живой сервер CRMP</h1>
+    <section id="home" class="hero">
+      <h1>Molven RP — CRMP проект</h1>
       <p class="lead">Ролевая атмосфера, кастомные скрипты, дружное сообщество.</p>
       <a class="btn" href="{{ url_for('download') }}">Скачать лаунчер</a>
       <a class="ghost" href="{{ url_for('news') }}">Читать новости</a>
@@ -71,7 +70,7 @@
     <section id="download" class="card-section">
       <h2>Скачать клиент</h2>
       <p class="muted">Поддерживается только Windows. Архив содержит лаунчер и инструкции по установке.</p>
-      <a class="btn" href="#">Скачать (Windows)</a>
+      <a class="btn" href="#download">Скачать (Windows)</a>
     </section>
 
     <!-- Донат -->
