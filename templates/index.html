@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-<body>
+<body style="background-image: url('{{ url_for('static', filename='img/background.png') }}');">
   <header>
     <div class="container nav">
       <div class="brand">
@@ -38,7 +38,7 @@
 
   <main class="container">
     <!-- Главная секция -->
-    <section id="home" class="hero" style="background-image: url('{{ url_for('static', filename='img/background.png') }}');">>
+    <section id="home" class="hero">
       <h1>Molven RP — CRMP проект</h1>
       <p class="lead">Ролевая атмосфера, кастомные скрипты, дружное сообщество.</p>
       <a class="btn" href="#download">Скачать лаунчер</a>
