@@ -1,129 +1,363 @@
-:root{
-  --bg:#0f1113;
-  --card:#141617;
-  --muted:#9aa3a8;
-  --accent:#d63939;
-  --accent-2:#b63a3a;
-  --radius:12px;
-  --container:1100px;
+/* ================== */
+/* 🎨 Основные переменные */
+/* ================== */
+:root {
+  --bg: #0f1113;
+  --card: #141617;
+  --muted: #9aa3a8;
+  --accent: #d63939;
+  --accent-2: #b63a3a;
+  --radius: 12px;
+  --container: 1100px;
+  --transition: 0.3s ease;
 }
-*{box-sizing:border-box}
+
+/* ================== */
+/* 🧱 Базовые стили */
+/* ================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    background-image: url("{{ url_for('static', filename='img/background.png') }}");
-    background-size: cover; /* масштабирует изображение по всей области */
-    background-position: center; /* центрирует изображение */
-    background-repeat: no-repeat; /* не повторять */
-    background-attachment: fixed; /* фон фиксирован при скролле */
-    color: #fff; /* чтобы текст был виден на фоне */
+  background-image: url("{{ url_for('static', filename='img/background.png') }}");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
-a{color:inherit;text-decoration:none}
-.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ================== */
+/* 📌 Header */
+/* ================== */
 header {
-    text-align: left;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0); /* полупрозрачный хедер */
+  padding: 15px 0;
+  background: rgba(15, 17, 19, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
 .container.nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* прижать всё к левому краю */
-    width: 100%;
-    padding: 0 20px; /* отступ слева/справа при необходимости */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
 
+/* Лого и текст */
 .brand {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.project-info {
-    margin-left: 10px; /* отступ текста от логотипа */
-    text-align: left;   /* текст слева */
+.logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center}
-.logo img{width:100%;height:100%;border-radius:10px;object-fit:cover}
-.project-title{font-weight:700}
-.project-subtitle{font-size:12px;color:var(--muted)}
-nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-.menu-toggle{display:none;background:transparent;border:none;color:#fff;font-size:24px;cursor:pointer}
-.header-buttons{display:flex;gap:10px;align-items:center}
-.btn{padding:8px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;font-weight:600;cursor:pointer}
-.ghost{padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);cursor:pointer}
-.hero{padding:60px 0;text-align:center}
-.lead{color:var(--muted);margin:12px 0}
-.card-section{background:var(--card);padding:20px;margin:20px 0;border-radius:var(--radius)}
-.news-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-.news-item{display:flex;gap:10px}
-.thumb{width:80px;height:64px;border-radius:8px;background:#222;background-size:cover;background-position:center}
-.news-text h3{margin:0;font-size:16px}
-.muted{color:var(--muted)}
-.donate-buttons{display:flex;gap:10px;margin-top:10px}
-input,textarea,select{width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
-footer{padding:20px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between}
-@media (max-width:920px){
-  nav ul{display:none}
-  .menu-toggle{display:block}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
 }
-/* Фоновое изображение для страницы входа */
+
+.project-title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.project-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Навигация */
+nav {
+  flex: 1;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  list-style: none;
+}
+
+nav ul li a {
+  font-weight: 500;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: var(--accent);
+  transition: width var(--transition);
+  margin: 4px auto 0;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Кнопки справа */
+.header-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* ================== */
+/* 🔘 Кнопки */
+/* ================== */
+.btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.ghost {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  color: white;
+  transition: var(--transition);
+}
+
+.ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ================== */
+/* 🖼 Hero */
+/* ================== */
+.hero {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.lead {
+  color: var(--muted);
+  margin: 12px 0;
+}
+
+/* ================== */
+/* 📰 Карточки / Новости */
+/* ================== */
+.card-section {
+  background: var(--card);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: var(--radius);
+}
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.news-item {
+  display: flex;
+  gap: 10px;
+}
+
+.thumb {
+  width: 80px;
+  height: 64px;
+  border-radius: 8px;
+  background: #222;
+  background-size: cover;
+  background-position: center;
+}
+
+.news-text h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ================== */
+/* 💰 Донаты */
+/* ================== */
+.donate-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* ================== */
+/* 📝 Формы */
+/* ================== */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  color: inherit;
+}
+
+/* ================== */
+/* ⚓ Footer */
+/* ================== */
+footer {
+  padding: 20px 0;
+  color: var(--muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+/* ================== */
+/* 🔑 Login Page */
+/* ================== */
 .login-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url("/static/img/background.jpg"); /* путь к твоей картинке */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/static/img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Форма входа */
 .login-box {
-    background: rgba(0, 0, 0, 0.75); /* затемнённый фон */
-    padding: 40px;
-    border-radius: 12px;
-    width: 320px;
-    text-align: center;
-    color: #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.75);
+  padding: 40px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .login-box h2 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .login-box label {
-    display: block;
-    text-align: left;
-    margin-bottom: 5px;
-    font-weight: bold;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .login-box input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    border: none;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: none;
 }
 
 .login-box .btn {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    background-color: #e74c3c;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #e74c3c;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .login-box .btn:hover {
-    background-color: #c0392b;
+  background-color: #c0392b;
 }
 
 .login-box .hint {
-    margin-top: 10px;
-    font-size: 12px;
-    color: #bbb;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #bbb;
+}
+
+/* ================== */
+/* 📱 Адаптив */
+/* ================== */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 920px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: var(--card);
+    padding: 20px;
+    border-radius: var(--radius);
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    right: 20px;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-buttons {
+    display: none; /* спрятать кнопки справа на мобилках */
+  }
+
+  .container.nav {
+    justify-content: space-between;
+  }
 }
