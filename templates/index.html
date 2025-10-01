@@ -5,7 +5,7 @@
 {% block content %}
 <section id="news" class="hero">
   <h1>Molven RolePlay — CRMP проект</h1>
-  <p class="lead">Ролевая атмосфера, кастомные машипы, крутые фракции.</p>
+  <h3 class="lead">Ролевая атмосфера, кастомные машипы, крутые фракции.</h3>
   <a class="btn" href="#download">Скачать лаунчер</a>
   <a class="ghost" href="#news">Читать новости</a>
 </section>
@@ -16,8 +16,8 @@
     <article class="card news-item">
       <div class="thumb" style="background-image:url('{{ url_for('static', filename='img/news1.jpg') }}')"></div>
       <div class="news-text">
-        <h3>Обновление v0.1</h3>
-        <p class="muted">Создан сайт проекта.</p>
+        <h3>Обновление</h3>
+        <p class="muted">Создан сайт и форум проекта.</p>
       </div>
     </article>
     <article class="card news-item">
@@ -31,9 +31,10 @@
 </section>
 
 <section id="donate" class="card-section">
-  <h2>Скачать клиент</h2>
-  <p class="muted">Поддерживается только Windows. Архив содержит лаунчер и инструкции по установке.</p>
-  <a class="btn" href="#download">Скачать (Windows)</a>
+  <h2>Скачать лаунчера на ПК/Мобайл</h2>
+  <div class="thumb" style="background-image:url('{{ url_for('static', filename='img/news2.jpg') }}')"></div>
+  <h4 class="muted">Пока что нету лаунчеров. Поэтому скачивания не будет!</h4>
+  <a class="btn" href="#download">Скачать на PC</a><a class="btn" href="#download">Скачать на Mobile</a>
 </section>
 
 <section id="contacts" class="card-section">
@@ -47,7 +48,6 @@
     </select>
     <div class="donate-buttons">
       <button class="btn" type="submit">Оплатить картой</button>
-      <button class="ghost" type="button" onclick="simulatePay('paypal')">PayPal</button>
     </div>
   </form>
 </section>
