@@ -7,33 +7,31 @@
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-<body style="background-image: url('{{ url_for('static', filename='img/background.png') }}');">
+<body>
 
 <header>
-  <div class="card-section">
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">
-          <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Molven RP" href="/">
-        </div>
-        <div>
-          <div href="/" class="project-title">⠀Molven RolePlay⠀⠀⠀</div>
-          <div href="/" class="project-subtitle">⠀⠀CRMP Project⠀⠀⠀</div>
-        </div>
+  <div class="container nav">
+    <div class="brand">
+      <a href="/" class="logo">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Molven RP">
+      </a>
+      <div class="project-info">
+        <a href="/" class="project-title">Molven RolePlay</a>
+        <div class="project-subtitle">CRMP Project</div>
       </div>
-      <nav>
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        <ul id="navlist">
-          <li><a href="/" class="btn">Главная</a></li>
-          <li><a href="https://molvenproject.ru" class="btn" target="_blank">Форум</a></li>
-          <li><a href="/#news" class="btn">Новости</a></li>
-          <li><a href="/#download" class="btn">Скачать</a></li>
-          <li><a href="/#donate" class="btn">Донат</a></li>
-          <li><a href="/login" class="btn" >Личный кабинет</a></li>
-        </ul>
-      </nav>
     </div>
-  </div>
+
+    <nav>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul id="navlist">
+        <li><a href="/">Главная</a></li>
+        <li><a href="https://molvenproject.ru" target="_blank">Форум</a></li>
+        <li><a href="/#news">Новости</a></li>
+        <li><a href="/#download">Скачать</a></li>
+        <li><a href="/#donate">Донат</a></li>
+        <li><a href="/login">Личный кабинет</a></li>
+      </ul>
+    </nav></div>
 </header>
 
 <main class="container">
@@ -45,10 +43,15 @@
 <footer>
   <div class="container">
     <span class="muted">© Molven RP — Все права защищены</span>
-    <span class="muted">IP: Скоро! | Техподдержка: TG @MolvenRP</span>
+    <span class="muted">IP: Скоро! | Тех-поддержка: TG <a href="https://t.me/molvenrp">@MolvenRP</a></span>
   </div>
 </footer>
 
+<script>
+  function toggleMenu() {
+    document.getElementById("navlist").classList.toggle("active");
+  }
+</script>
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
