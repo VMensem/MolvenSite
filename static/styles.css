@@ -22,10 +22,9 @@
 }
 
 body {
-  background-image: url("{{ url_for('static', filename='img/background.png') }}");
+  margin: 0;
+  background: url("../img/background.png") no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   color: #fff;
   font-family: Arial, sans-serif;
   line-height: 1.6;
