@@ -72,19 +72,21 @@ header {
 .logo {
   width: 46px;
   height: 46px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-radius: 50%;       /* делаем логотип круглым, можно оставить 10px если нужен квадрат с закруглением */
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;  /* убираем красный градиент */
+  overflow: hidden;         /* чтобы картинка не выходила за рамки */
 }
 
 .logo img {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
-  object-fit: cover;
+  object-fit: cover;        /* чтобы картинка занимала весь блок, без искажений */
+  display: block;
 }
+
 
 .project-title {
   font-weight: 700;
