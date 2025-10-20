@@ -1,16 +1,22 @@
 {% extends "base.html" %}
-
 {% block title %}Molven RP — Главная{% endblock %}
 
 {% block content %}
-<section id="news" class="hero">
-  <div><h1>Molven RolePlay — CRMP проект</h1>
-  <h2 class="lead">Ролевая атмосфера, красивый транспорт, множество очень крутых функций и всего! Присойденяйся и играй с нами!.</h2></div>
-  <a class="btn" href="#download">Скачать лаунчер</a>
-  <a class="ghost" href="#news">Читать новости</a>
+<section id="hero" class="hero-section">
+  <div class="hero-box">
+    <h1>Molven RolePlay — CRMP проект</h1>
+    <p class="lead">
+      Ролевая атмосфера, красивый транспорт, множество крутых функций и многое другое!<br>
+      Присоединяйся и играй с нами!
+    </p>
+    <div class="hero-buttons">
+      <a class="btn" href="#download">Скачать лаунчер</a>
+      <a class="ghost" href="#news">Читать новости</a>
+    </div>
+  </div>
 </section>
 
-<section id="download" class="card-section">
+<section id="news" class="card-section">
   <h2>Последние новости</h2>
   <div class="news-list">
     <article class="card news-item">
@@ -20,6 +26,7 @@
         <p class="muted">Создан сайт и форум проекта.</p>
       </div>
     </article>
+
     <article class="card news-item">
       <div class="thumb" style="background-image:url('{{ url_for('static', filename='img/news2.jpg') }}')"></div>
       <div class="news-text">
@@ -30,25 +37,36 @@
   </div>
 </section>
 
-<section id="donate" class="card-section">
-  <h2>Скачать лаунчер на ПК/Мобайл</h2>
-  <div class="thumb" style="background-image:url('{{ url_for('static', filename='img/news2.jpg') }}')"></div>
-  <h4 class="muted">Пока что нету лаунчеров. Поэтому скачивания не будет!</h4>
-  <a class="btn" href="#download">Скачать на PC</a>     <a class="btn" href="#download">Скачать на Mobile</a>
+<section id="download" class="card-section">
+  <h2>Скачать лаунчер на ПК / Мобайл</h2>
+  <div class="thumb large" style="background-image:url('{{ url_for('static', filename='img/news2.jpg') }}')"></div>
+  <p class="muted">Пока что лаунчеры недоступны — сервер в разработке 🚧</p>
+  <div class="hero-buttons">
+    <a class="btn" href="#download">Скачать на PC</a>
+    <a class="btn" href="#download">Скачать на Mobile</a>
+  </div>
 </section>
 
-<section id="contacts" class="card-section">
+<section id="donate" class="card-section">
   <h2>Донат и магазин</h2>
-  <form onsubmit="event.preventDefault();simulatePay()">
-    <label>Сумма (₽)</label>
-    <input type="number" value="1" min="1">
-    <label>Пакет</label>
-    <select>
+  <form onsubmit="event.preventDefault();simulatePay()" class="donate-form">
+    <label for="sum">Сумма (₽)</label>
+    <input id="sum" type="number" value="1" min="1">
+
+    <label for="pack">Пакет</label>
+    <select id="pack">
       <option value="1">+1 Coins</option>
     </select>
+
     <div class="donate-buttons">
       <button class="btn" type="submit">Оплатить картой</button>
     </div>
   </form>
 </section>
+
+<div id="alertOverlay" class="alert-overlay">
+  <div class="alert-box">
+    Оплата временно недоступна,<br>сервер в разработке 🚧
+  </div>
+</div>
 {% endblock %}
