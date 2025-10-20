@@ -31,19 +31,23 @@
         <li><a href="/#donate">Донат</a></li>
         <li><a href="/login">Личный кабинет</a></li>
       </ul>
-    </nav></div>
+    </nav>
+  </div>
 </header>
 
 <main class="container">
-  {% block content %}
-  <!-- сюда будет вставляться содержимое index.html или login.html -->
-  {% endblock %}
+  {% block content %}{% endblock %}
 </main>
 
 <footer>
-  <div class="container">
-    <span class="muted">© Molven RP — Все права защищены</span>
-    <span class="muted">IP: Скоро! | Тех-поддержка: TG <a href="https://t.me/molvenrp">@MolvenRP</a></span>
+  <div class="container footer-text">
+    <span>© Molven RP — Все права защищены</span>
+    <span>IP: Скоро! | Тех-поддержка: <a href="https://t.me/molvenrp">@MolvenRP</a></span>
+  </div>
+  <div class="container footer-social">
+    <a href="https://vk.com/molvenproject" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/145/145813.png" alt="VK"></a>
+    <a href="https://t.me/molvenrp" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
+    <a href="https://dsc.gg/molvenrp" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord"></a>
   </div>
 </footer>
 
