@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Донат — Molven RP{% endblock %}
+
+{% block content %}
+<section class="donate-section">
+  <div class="donate-box">
+    <h1>Пополнение счёта</h1>
+    <h3>Никнейм</h3>
+    <input type="text" id="username" name="username" placeholder="Введите ваш никнейм">
+    <h3>Сумма (в рублях)</h3>
+    <input type="number" id="amount" name="amount" placeholder="Введите сумму в рублях"><br><br>
+    <button type="button" class="btn" onclick="simulatePay()">Пополнить</button>
+  </div>
+</section>
+<section id="donate-section" class="card-section fade-in">
+  <h2>Выберите способ оплаты</h2>
+  <div class="donate-options">
+    <div class="donate-card" onclick="simulatePay('qiwi')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/QIWI_logo.svg/1200px-QIWI_logo.svg.png" alt="Qiwi">
+      <h3>Qiwi</h3>
+      <p class="muted">Оплата через Qiwi кошелёк или терминал</p>
+    </div>
+    <div class="donate-card" onclick="simulatePay('yoomoney')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/%D0%AEMoney.png" alt="YooMoney">
+      <h3>YooMoney</h3>
+      <p class="muted">Оплата через YooMoney кошелёк или карту</p>
+    </div>
+    <div class="donate-card" onclick="simulatePay('paypal')">
+      <img src="https://www.openbanking.org.uk/wp-content/uploads/PayPal_Logo_Horizontal_Full_Color_RGB-002-1.png" alt="PayPal">
+      <h3>PayPal</h3>
+      <p class="muted">Оплата через PayPal аккаунт или карту</p>
+    </div>
+  </div>
+<!-- уведомление (демо) -->
+<div id="alertOverlay" class="alert-overlay">
+  <div class="alert-box">
+    Функционал оплаты временно недоступен<br>Сервер в разработке 🚧
+  </div>
+</div>
+
+<script>
+function simulatePay(provider) {
+  const alertOverlay = document.getElementById("alertOverlay");
+  alertOverlay.classList.add("show");
+  setTimeout(() => {
+    alertOverlay.classList.remove("show");
+  }, 2500);
+}
+</script>
+{% endblock %}
