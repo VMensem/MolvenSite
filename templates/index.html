@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% block title %}Molven RP — Главная{% endblock %}
+{% block title %}Главная - Molven RP{% endblock %}
 
 {% block content %}
-<section id="hero" class="hero-section">
+<section id="news" class="hero-section">
   <div class="hero-box">
     <h1>Molven RolePlay — CRMP проект</h1>
     <p class="lead">
@@ -16,14 +16,14 @@
   </div>
 </section>
 
-<section id="news" class="card-section">
+<section id="game" class="card-section fade-in">
   <h2>Последние новости</h2>
   <div class="news-list">
     <article class="card news-item">
       <div class="thumb" style="background-image:url('{{ url_for('static', filename='img/news1.jpg') }}')"></div>
       <div class="news-text">
         <h3>Обновление</h3>
-        <p class="muted">Создан сайт и форум проекта.</p>
+        <p class="muted">Изменён стиль сайта, добавлен форум, добавлен сайт помощи.</p>
       </div>
     </article>
 
@@ -31,42 +31,19 @@
       <div class="thumb" style="background-image:url('{{ url_for('static', filename='img/news2.jpg') }}')"></div>
       <div class="news-text">
         <h3>Сервер</h3>
-        <p class="muted">Пофикшено множество багов и функций.</p>
+        <p class="muted">Пофикшено множество багов и функций. Добавлен логотип сервера!</p>
       </div>
     </article>
   </div>
 </section>
 
-<section id="download" class="card-section">
-  <h2>Скачать лаунчер на ПК / Мобайл</h2>
+<section class="card-section fade-in">
+  <h2>Лаунчеры</h2>
   <div class="thumb large" style="background-image:url('{{ url_for('static', filename='img/news2.jpg') }}')"></div>
-  <p class="muted">Пока что лаунчеры недоступны — сервер в разработке 🚧</p>
+  <p class="muted">Лаунчеры в разработке, ждите новостей в нашем паблике ВКонтакте или Телеграм канале!</p><br>
   <div class="hero-buttons">
-    <a class="btn" href="#download">Скачать на PC</a>
-    <a class="btn" href="#download">Скачать на Mobile</a>
+    <a class="btn" href="#game">Лаунчер на Компьютер</a>
+    <a class="btn" href="#game">Лаунчер на Телефон</a>
   </div>
 </section>
-
-<section id="donate" class="card-section">
-  <h2>Донат и магазин</h2>
-  <form onsubmit="event.preventDefault();simulatePay()" class="donate-form">
-    <label for="sum">Сумма (₽)</label>
-    <input id="sum" type="number" value="1" min="1">
-
-    <label for="pack">Пакет</label>
-    <select id="pack">
-      <option value="1">+1 Coins</option>
-    </select>
-
-    <div class="donate-buttons">
-      <button class="btn" type="submit">Оплатить картой</button>
-    </div>
-  </form>
-</section>
-
-<div id="alertOverlay" class="alert-overlay">
-  <div class="alert-box">
-    Оплата временно недоступна,<br>сервер в разработке 🚧
-  </div>
-</div>
 {% endblock %}
