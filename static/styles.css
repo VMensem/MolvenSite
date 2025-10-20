@@ -362,3 +362,85 @@ footer {
     justify-content: space-between;
   }
 }
+/* === Поле пароля с глазом === */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding: 10px 42px 10px 12px;
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.password-wrapper input:focus {
+  border-color: #e53935;
+  outline: none;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.toggle-password svg {
+  transition: stroke 0.2s ease, transform 0.2s ease;
+}
+
+.toggle-password:hover svg {
+  stroke: #e53935;
+  transform: scale(1.1);
+}
+
+/* === Уведомление + размытие === */
+.alert-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9998;
+}
+
+.alert-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.alert-box {
+  background: rgba(26, 26, 26, 0.9);
+  border: 1px solid #e53935;
+  color: #fff;
+  padding: 25px 40px;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 17px;
+  box-shadow: 0 0 20px rgba(229, 57, 53, 0.4);
+  transform: scale(0.9);
+  opacity: 0;
+  animation: fadeInBox 0.3s forwards ease;
+}
+
+@keyframes fadeInBox {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
