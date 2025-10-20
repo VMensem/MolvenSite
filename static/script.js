@@ -29,3 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2800);
   });
 });
+function simulatePay() {
+  const alertOverlay = document.getElementById("alertOverlay");
+  alertOverlay.classList.add("show");
+  setTimeout(() => {
+    alertOverlay.classList.remove("show");
+  }, 2500);
+}
