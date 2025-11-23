@@ -13,6 +13,10 @@ def donate():
 @app.route('/login')
 def login():
     return render_template('login.html')
+
+@app.route("/discord")
+def discord():
+    return render_template("discord.html")
     
 if __name__ == '__main__':
     app.run(debug=True)
